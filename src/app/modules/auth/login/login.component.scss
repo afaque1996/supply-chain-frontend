@@ -1,0 +1,111 @@
+/* Center login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Login box styling */
+.login-box {
+  width: 350px;
+  padding: 30px;
+  background: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Input field styling */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%; /* Ensure input takes full width */
+}
+
+/* Password field styling */
+.password-group {
+  position: relative;
+}
+
+/* Positioning wrapper for password input */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Password input should have enough space for the button */
+.password-wrapper input {
+  flex: 1;
+  padding-right: 40px; /* Adds space for the toggle button */
+}
+
+/* Styling for the Password Toggle Button */
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  padding: 0; /* Remove padding to ensure proper alignment */
+}
+
+.password-toggle-btn:hover {
+  color: #007bff;
+}
+
+/* General Button Styling */
+button[type="submit"] {
+  width: 100%; /* Ensures full width for the Login button */
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+button[type="submit"]:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Error messages */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

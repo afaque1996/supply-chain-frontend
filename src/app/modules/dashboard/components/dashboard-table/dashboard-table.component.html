@@ -1,0 +1,22 @@
+<div class="table-container">
+    <h3>Recent Transactions</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Transaction ID</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.id }}</td>
+          <td>{{ transaction.type }}</td>
+          <td>{{ transaction.status }}</td>
+          <td>{{ transaction.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

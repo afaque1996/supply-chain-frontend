@@ -1,0 +1,53 @@
+<div class="request-container">
+    <!-- Button to Open Request Modal -->
+    <button class="request-btn" (click)="openRequestModal()">Request Vehicle</button>
+  
+    <!-- Request Modal -->
+    <div class="modal-overlay" *ngIf="isRequestModalOpen">
+      <div class="modal-content">
+        <h3>Request Vehicle Transfer</h3>
+  
+        <label for="vehicleModel">Vehicle Model:</label>
+        <select id="vehicleModel" [(ngModel)]="vehicleModel">
+          <option *ngFor="let model of vehicleModels" [value]="model">{{ model }}</option>
+        </select>
+  
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" [(ngModel)]="quantity" min="1" />
+  
+        <label for="stockyard">Destination Stockyard:</label>
+        <select id="stockyard" [(ngModel)]="selectedStockyard">
+          <option *ngFor="let stockyard of stockyards" [value]="stockyard">{{ stockyard }}</option>
+        </select>
+  
+        <div class="modal-actions">
+          <button class="cancel-btn" (click)="closeRequestModal()">Cancel</button>
+          <button class="submit-btn" (click)="submitRequest()">Submit Request</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Table for Pending & Completed Requests -->
+    <div class="requests-table">
+      <h3>Vehicle Transfer Requests</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Quantity</th>
+            <th>Stockyard</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests">
+            <td>{{ request.model }}</td>
+            <td>{{ request.quantity }}</td>
+            <td>{{ request.stockyard }}</td>
+            <td [class]="request.status.toLowerCase()">{{ request.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

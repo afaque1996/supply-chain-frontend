@@ -1,0 +1,11 @@
+<div class="module-selection-container">
+    <h2>Select a Module</h2>
+  
+    <div class="module-grid">
+      <div *ngFor="let module of getAccessibleModules()" class="module-card" (click)="navigateToModule(module.route)">
+        <span class="material-icons">{{ module.icon }}</span>
+        <h3>{{ module.name }}</h3>
+      </div>
+    </div>
+  </div>
+  

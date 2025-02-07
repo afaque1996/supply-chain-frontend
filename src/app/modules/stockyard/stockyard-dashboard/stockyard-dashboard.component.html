@@ -1,0 +1,41 @@
+<div class="stockyard-container">
+    <h2>🚗 Stockyard Dashboard</h2>
+  
+    <!-- 🔹 Stockyard Inventory Section -->
+    <h3>Stockyard Inventory</h3>
+    <div class="stats">
+      <div class="stat-card" *ngFor="let item of stockyardData$ | async">
+        <h3>{{ item.model }}</h3>
+        <p>Stockyard: {{ item.stockyard }}</p>
+        <p>Status: <span [class]="item.status === 'Available' ? 'available' : 'unavailable'">{{ item.status }}</span></p>
+      </div>
+    </div>
+  
+    <button class="transfer-btn" (click)="requestStockTransfer()">Request Stock Transfer</button>
+  
+    <!-- 🔹 Vehicle Requests Section -->
+    <h3>Vehicle Requests</h3>
+    <div class="request-container">
+      <div class="request-card" *ngFor="let request of vehicleRequests$ | async">
+        <h4>{{ request.model }}</h4>
+        <p>Stockyard: {{ request.stockyard }}</p>
+        <p>Status: {{ request.status }}</p>
+        <button (click)="updateRequestStatus(request.id, 'Approved')">Approve</button>
+        <button (click)="updateRequestStatus(request.id, 'Rejected')">Reject</button>
+      </div>
+    </div>
+  
+    <button class="request-btn" (click)="createVehicleRequest()">Create Vehicle Request</button>
+  
+    <!-- 🔹 PDI Vehicles Section -->
+    <h3>Pre-Delivery Inspection (PDI) Vehicles</h3>
+    <div class="pdi-container">
+      <div class="pdi-card" *ngFor="let vehicle of pdiVehicles$ | async">
+        <h4>{{ vehicle.model }}</h4>
+        <p>Status: {{ vehicle.status }}</p>
+        <button (click)="updatePdiStatus(vehicle.id, 'Passed')">Mark Passed</button>
+        <button (click)="updatePdiStatus(vehicle.id, 'Failed')">Mark Failed</button>
+      </div>
+    </div>
+  </div>
+  

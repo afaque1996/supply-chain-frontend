@@ -1,0 +1,41 @@
+.module-selection-container {
+    text-align: center;
+    padding: 20px;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+  
+    .module-card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+      text-align: center;
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+  
+      .material-icons {
+        font-size: 40px;
+        color: #007bff;
+      }
+  
+      h3 {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+  

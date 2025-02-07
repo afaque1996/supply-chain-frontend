@@ -1,0 +1,21 @@
+<div class="charts-container">
+    <!-- Pie Chart for Stock Distribution -->
+    <div class="chart">
+      <h3>Stock Distribution</h3>
+      <canvas baseChart 
+        [data]="stockChartData"
+        [type]="stockChartType">
+      </canvas>
+    </div>
+  
+    <!-- Line Chart for Orders Trend -->
+    <div class="chart">
+      <h3>Orders Trend</h3>
+      <canvas baseChart 
+        [data]="ordersChartData"
+        [options]="ordersChartOptions"
+        [type]="ordersChartType">
+      </canvas>
+    </div>
+  </div>
+  

@@ -1,0 +1,35 @@
+.stockyard-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .stats, .request-container, .pdi-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .stat-card, .request-card, .pdi-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .transfer-btn, .request-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .transfer-btn:hover, .request-btn:hover {
+    background: #0056b3;
+  }
+  
